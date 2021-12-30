@@ -70,3 +70,13 @@ dependencies {
     implementation(Kotlin.coroutines_core)
     implementation(Kotlin.coroutines_android)
 }
+
+afterEvaluate {
+    publishing {
+        publications {
+            create(Maven.Publish.release, MavenPublication::class) {
+                from(components.getByName(Maven.Publish.release))
+            }
+        }
+    }
+}
