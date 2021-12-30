@@ -20,7 +20,7 @@ allprojects {
 2. Add the dependency
 ```groovy
 dependencies {
-        implementation 'com.github.D10NGYANG:DLSideBar_Compose:1.0.1'
+        implementation 'com.github.D10NGYANG:DLSideBar_Compose:1.0.2'
 }
 ```
 3. 在你的UI页面中使用
