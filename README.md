@@ -4,6 +4,8 @@
 # 截图
 ![](image/image1.png#pic_center =200x)
 ![](image/image2.png)
+<img src="https://github.com/D10NGYANG/DLSideBar_Compose/blob/master/image/image1.png" width="200"/><br/>
+<img src="https://github.com/D10NGYANG/DLSideBar_Compose/blob/master/image/image2.png" width="200"/><br/>
 
 # 使用说明
 1. Add the JitPack repository to your build file
