@@ -2,9 +2,7 @@
 简单易用的SideBar 快速定位侧边栏A~Z 仿微信国家或地区代码选择 `jetpack compose`版本
 
 # 截图
-![](image/image1.png#pic_center =200x)
-![](image/image2.png)
-<img src="https://github.com/D10NGYANG/DLSideBar_Compose/blob/master/image/image1.png" width="200"/><br/>
+<img src="https://github.com/D10NGYANG/DLSideBar_Compose/blob/master/image/image1.png" width="200"/>
 <img src="https://github.com/D10NGYANG/DLSideBar_Compose/blob/master/image/image2.png" width="200"/><br/>
 
 # 使用说明
