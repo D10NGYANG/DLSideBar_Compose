@@ -2,7 +2,8 @@
 简单易用的SideBar 快速定位侧边栏A~Z 仿微信国家或地区代码选择 `jetpack compose`版本
 
 # 截图
-![](image/image1.png =200x)![](image/image2.png)
+![](image/image1.png#pic_center =200x)
+![](image/image2.png)
 
 # 使用说明
 1. Add the JitPack repository to your build file
