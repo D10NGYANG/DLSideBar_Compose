@@ -2,6 +2,8 @@
 简单易用的SideBar 快速定位侧边栏A~Z 仿微信国家或地区代码选择 `jetpack compose`版本
 [![](https://jitpack.io/v/D10NGYANG/DLSideBar_Compose.svg)](https://jitpack.io/#D10NGYANG/DLSideBar_Compose)
 
+普通Android XML布局版本[在这里](https://github.com/D10NGYANG/DL10SideBar)
+
 # 截图
 <img src="https://github.com/D10NGYANG/DLSideBar_Compose/blob/master/image/image1.png" width="200"/>
 <img src="https://github.com/D10NGYANG/DLSideBar_Compose/blob/master/image/image2.png" width="200"/><br/>
@@ -18,7 +20,7 @@ allprojects {
 2. Add the dependency
 ```groovy
 dependencies {
-        implementation 'com.github.D10NGYANG:DLSideBar_Compose:1.0.0'
+        implementation 'com.github.D10NGYANG:DLSideBar_Compose:1.0.1'
 }
 ```
 3. 在你的UI页面中使用
