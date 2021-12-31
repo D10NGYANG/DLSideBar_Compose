@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import com.d10ng.applib.resource.getAssetsJSONArray
 import com.d10ng.sidebar.demo.app.MyApp
 import com.d10ng.sidebar.demo.bean.AreaBean
-import com.d10ng.sidebar.demo.utils.getPinYin
+import com.d10ng.text.string.toPinYin
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 
@@ -29,7 +29,7 @@ class AppViewModel: ViewModel() {
     init {
         val jsonObj = MyApp.instance().getAssetsJSONArray("area_phone_code.json").toString()
         val list: MutableList<AreaBean> = json.decodeFromString(jsonObj)
-        list.forEach { item -> item.py = item.zh.getPinYin() }
+        list.forEach { item -> item.py = item.zh.toPinYin() }
         areas = list.sortedBy { it.py }
     }
 

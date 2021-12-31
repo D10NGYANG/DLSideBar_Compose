@@ -119,7 +119,7 @@ object D10NG {
     const val coroutinesUtil = "com.github.D10NGYANG:DLCoroutinesUtil:0.2"
     const val dateUtil = "com.github.D10NGYANG:DLDateUtil:1.3"
     const val stringUtil = "com.github.D10NGYANG:DLStringUtil:1.12"
-    const val textUtil = "com.github.D10NGYANG:DLTextUtil:1.2.2"
+    const val textUtil = "com.github.D10NGYANG:DLTextUtil:1.2.3"
     const val gpsUtil = "com.github.D10NGYANG:DLGpsUtil:1.6"
     const val latlngUtil = "com.github.D10NGYANG:DLLatLngUtil:1.2"
     const val retrofitCoroutines = "com.github.D10NGYANG:DL10RetrofitCoroutines:1.4"

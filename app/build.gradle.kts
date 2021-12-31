@@ -95,6 +95,8 @@ dependencies {
     implementation(D10NG.coroutinesUtil)
     // APP通用工具
     implementation(D10NG.appUtil)
+    // 字符串字节处理工具
+    implementation(D10NG.textUtil)
 
     // 拼音处理
     implementation(files("libs/pinyin4j-2.5.0.jar"))
