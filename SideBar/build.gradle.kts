@@ -1,20 +1,20 @@
 plugins {
-    id(Android.plugins_library)
-    id(Kotlin.plugins_android)
-    id(Kotlin.plugins_kapt)
-    id(Kotlin.plugins_parcelize)
-    id(Maven.public)
+    id(Android.Plugin.library)
+    id(Kotlin.Plugin.ID.android)
+    id(Kotlin.Plugin.ID.kapt)
+    id(Kotlin.Plugin.ID.parcelize)
+    id(Maven.Plugin.public)
 }
 
-group = "com.D10NG"
-version = "1.0.0"
+group = "com.github.D10NG"
+version = "1.0.3"
 
 android {
-    compileSdk = Android.compile_sdk
+    compileSdk = Project.compile_sdk
 
     defaultConfig {
-        minSdk = Android.min_sdk
-        targetSdk = Android.target_sdk
+        minSdk = Project.min_sdk
+        targetSdk = Project.target_sdk
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -31,10 +31,10 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = Kotlin.jvm_target
+        jvmTarget = "1.8"
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = Compose.version
+        kotlinCompilerExtensionVersion = compose_ver
     }
     buildFeatures {
         compose = true
@@ -44,38 +44,44 @@ android {
 dependencies {
 
     // Android
-    implementation(Android.androidx_core)
-    implementation(Android.androidx_appcompat)
-    implementation(Android.google_material)
+    implementation(AndroidX.core_ktx("1.7.0"))
+    implementation(AndroidX.appcompat("1.4.1"))
+    implementation(Android.Google.material("1.5.0"))
 
     // 单元测试（可选）
-    testImplementation(Test.junit)
+    testImplementation(Test.junit("4.13.2"))
+    androidTestImplementation(AndroidX.Test.junit("1.1.3"))
+    androidTestImplementation(AndroidX.Test.espresso_core("3.4.0"))
 
     // Compose
-    implementation(Compose.androidx_ui)
-    implementation(Compose.androidx_tooling)
-    implementation(Compose.androidx_foundation)
-    implementation(Compose.androidx_material)
-    implementation(Compose.activity)
-    implementation(Compose.livedata)
-    implementation(Compose.androidx_navigation)
+    implementation(AndroidX.Compose.ui(compose_ver))
+    androidTestImplementation(AndroidX.Compose.ui_test(compose_ver))
+    implementation(AndroidX.Compose.ui_tooling(compose_ver))
+    implementation(AndroidX.Compose.foundation(compose_ver))
+    implementation(AndroidX.Compose.animation(compose_ver))
+    implementation(AndroidX.Compose.material(compose_ver))
+    implementation(AndroidX.Compose.material_icons_core(compose_ver))
+    implementation(AndroidX.Compose.material_icons_extended(compose_ver))
+    implementation(AndroidX.Compose.runtime_livedata(compose_ver))
+    implementation(AndroidX.activity_compose("1.4.0"))
+    implementation(AndroidX.navigation_compose("2.4.1"))
 
     // Lifecycle
-    implementation(Lifecycle.runtime)
-    implementation(Lifecycle.compiler)
-    implementation(Lifecycle.compose_viewmodel_support)
-    implementation(Lifecycle.livedata_support)
+    implementation(AndroidX.Lifecycle.runtime_ktx(jetpack_lifecycle_ver))
+    implementation(AndroidX.Lifecycle.common_java8((jetpack_lifecycle_ver)))
+    implementation(AndroidX.Lifecycle.viewmodel_compose_support(jetpack_lifecycle_ver))
+    implementation(AndroidX.Lifecycle.livedata_ktx_support(jetpack_lifecycle_ver))
 
     // Coroutines
-    implementation(Kotlin.coroutines_core)
-    implementation(Kotlin.coroutines_android)
+    implementation(Kotlin.Coroutines.core(kotlin_coroutines_ver))
+    implementation(Kotlin.Coroutines.android(kotlin_coroutines_ver))
 }
 
 afterEvaluate {
     publishing {
         publications {
-            create(Maven.Publish.release, MavenPublication::class) {
-                from(components.getByName(Maven.Publish.release))
+            create(Publish.release, MavenPublication::class) {
+                from(components.getByName(Publish.release))
             }
         }
     }

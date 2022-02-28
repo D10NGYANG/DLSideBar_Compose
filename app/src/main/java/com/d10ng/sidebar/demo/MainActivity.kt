@@ -31,8 +31,7 @@ import com.google.accompanist.navigation.animation.composable
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 
 class MainActivity : ComponentActivity() {
-    @ExperimentalComposeUiApi
-    @ExperimentalAnimationApi
+    @OptIn(ExperimentalAnimationApi::class, ExperimentalComposeUiApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         // 沉浸式状态栏
@@ -64,17 +63,17 @@ fun MainNavigation(
         HOME_SCREEN,
         modifier = Modifier
             .fillMaxSize(),
-        enterTransition = { _,_ ->
-            slideInHorizontally( { it } , tween(300) )
+        enterTransition = {
+            slideInHorizontally(initialOffsetX = {it})
         },
-        exitTransition = { _,_ ->
-            slideOutHorizontally( { -it } , tween(300) )
+        exitTransition = {
+            slideOutHorizontally(targetOffsetX = {-it})
         },
-        popEnterTransition = { _, _ ->
-            slideInHorizontally( { -it } , tween(300) )
+        popEnterTransition = {
+            slideInHorizontally(initialOffsetX = {-it})
         },
-        popExitTransition = { _, _ ->
-            slideOutHorizontally( { it } , tween(300) )
+        popExitTransition = {
+            slideOutHorizontally(targetOffsetX = {it})
         }
     ) {
         composable(HOME_SCREEN) {
