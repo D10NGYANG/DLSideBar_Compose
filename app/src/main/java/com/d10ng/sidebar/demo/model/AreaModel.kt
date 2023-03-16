@@ -1,13 +1,13 @@
 package com.d10ng.sidebar.demo.model
 
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.d10ng.applib.resource.getAssetsJSONArray
 import com.d10ng.sidebar.demo.app.MyApp
 import com.d10ng.sidebar.demo.bean.AreaBean
 import com.d10ng.text.string.toPinYin
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
+
 
 /** 自定义规则的JSON工具 */
 val json by lazy {
@@ -21,7 +21,7 @@ val json by lazy {
     }
 }
 
-class AppViewModel: ViewModel() {
+object AreaModel {
 
     /** 国家或地区列表 */
     val areas: List<AreaBean>
@@ -34,5 +34,5 @@ class AppViewModel: ViewModel() {
     }
 
     /** 选中地区 */
-    val selectAreaLive = MutableLiveData(AreaBean())
+    val selectAreaFlow = MutableStateFlow(AreaBean())
 }

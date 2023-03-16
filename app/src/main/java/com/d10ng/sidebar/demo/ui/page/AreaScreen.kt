@@ -18,24 +18,23 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavHostController
 import com.d10ng.sidebar.demo.R
 import com.d10ng.sidebar.demo.bean.AreaBean
-import com.d10ng.sidebar.demo.model.AppViewModel
+import com.d10ng.sidebar.demo.model.AreaModel
 import com.d10ng.sidebar.demo.ui.theme.*
 import com.d10ng.sidebar.demo.ui.view.Input
 import com.d10ng.sidebar.lib.SideBar
-import com.google.accompanist.insets.navigationBarsPadding
-import com.google.accompanist.insets.statusBarsHeight
+import com.ramcosta.composedestinations.annotation.Destination
+import com.ramcosta.composedestinations.annotation.RootNavGraph
+import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import kotlinx.coroutines.launch
 
-const val AREA_SCREEN = "area_screen"
-
 @ExperimentalComposeUiApi
+@RootNavGraph
+@Destination(style = PageTransitions::class)
 @Composable
 fun AreaScreen(
-    navController: NavHostController,
-    app: AppViewModel
+    nav: DestinationsNavigator
 ) {
 
     var isShowSearch by remember {
@@ -47,7 +46,7 @@ fun AreaScreen(
 
     val dataList = remember(isShowSearch, inputValue) {
         if (isShowSearch) {
-            app.areas.filter {
+            AreaModel.areas.filter {
                 it.zh.contains(inputValue) ||
                         "+${it.code}".contains(inputValue) ||
                         it.py.contains(inputValue, true) ||
@@ -55,7 +54,7 @@ fun AreaScreen(
                         it.locale.contains(inputValue, true)
             }
         } else {
-            app.areas
+            AreaModel.areas
         }
     }
 
@@ -70,7 +69,7 @@ fun AreaScreen(
         // 状态栏
         Spacer(modifier = Modifier
             .fillMaxWidth()
-            .statusBarsHeight()
+            .statusBarsPadding()
         )
 
         // 标题栏+搜索栏
@@ -88,7 +87,7 @@ fun AreaScreen(
                 modifier = Modifier
                     .padding(start = 8.dp)
                     .clickable {
-                        if (isShowSearch) isShowSearch = false else navController.navigateUp()
+                        if (isShowSearch) isShowSearch = false else nav.navigateUp()
                     }
             )
 
@@ -149,8 +148,8 @@ fun AreaScreen(
                         last.py[0].uppercase() != item.py[0].uppercase()
                     }
                     AreaItemView(info = item, isShowTag = isShowTag) {
-                        app.selectAreaLive.value = item
-                        navController.navigateUp()
+                        AreaModel.selectAreaFlow.value = item
+                        nav.navigateUp()
                     }
                 }
             }

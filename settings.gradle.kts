@@ -1,8 +1,8 @@
 pluginManagement {
     repositories {
-        gradlePluginPortal()
         google()
         mavenCentral()
+        gradlePluginPortal()
     }
 }
 dependencyResolutionManagement {
@@ -10,10 +10,10 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        jcenter()
+        maven("https://raw.githubusercontent.com/D10NGYANG/maven-repo/main/repository")
         maven("https://jitpack.io")
     }
 }
 rootProject.name = "DLSideBar_Compose"
-include(":app")
-include(":SideBar")
+include("app")
+include("library")

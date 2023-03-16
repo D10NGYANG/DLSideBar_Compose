@@ -2,33 +2,37 @@ package com.d10ng.sidebar.demo.ui.page
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.livedata.observeAsState
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavHostController
-import com.d10ng.sidebar.demo.bean.AreaBean
-import com.d10ng.sidebar.demo.model.AppViewModel
-import com.google.accompanist.insets.statusBarsPadding
+import com.d10ng.sidebar.demo.model.AreaModel
+import com.d10ng.sidebar.demo.ui.page.destinations.AreaScreenDestination
+import com.d10ng.sidebar.demo.ui.theme.PageTransitions
+import com.ramcosta.composedestinations.annotation.Destination
+import com.ramcosta.composedestinations.annotation.RootNavGraph
+import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 
-const val HOME_SCREEN = "home_screen"
-
+@OptIn(ExperimentalComposeUiApi::class)
+@RootNavGraph(start = true)
+@Destination(style = PageTransitions::class)
 @Composable
 fun HomeScreen(
-    navController: NavHostController,
-    app: AppViewModel
+    nav: DestinationsNavigator
 ) {
 
-    val selectBean by app.selectAreaLive.observeAsState(AreaBean())
+    val selectBean by AreaModel.selectAreaFlow.collectAsState()
 
     Column(
         modifier = Modifier.statusBarsPadding().padding(16.dp)
     ) {
         Button(onClick = {
-            navController.navigate(AREA_SCREEN)
+            nav.navigate(AreaScreenDestination)
         }) {
             Text(text = "跳到微信国家或地区代码")
         }

@@ -8,7 +8,6 @@ import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.graphics.Color
-import com.google.accompanist.insets.ProvideWindowInsets
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 private val DarkColorPalette = darkColors(
@@ -45,15 +44,12 @@ fun DLSideBarTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composa
         colors = colors,
         shapes = Shapes,
         content = {
-            ProvideWindowInsets(windowInsetsAnimationsEnabled = true) {
-                val systemUiController = rememberSystemUiController()
-                val useDarkIcons = MaterialTheme.colors.isLight
-                SideEffect {
-                    systemUiController.setStatusBarColor(
-                        Color.Transparent, darkIcons = useDarkIcons)
-                }
-                Surface(content = content)
+            val systemUiController = rememberSystemUiController()
+            SideEffect {
+                systemUiController.setStatusBarColor(
+                    Color.Transparent, darkIcons = darkTheme)
             }
+            Surface(content = content)
         }
     )
 }
