@@ -64,7 +64,13 @@ afterEvaluate {
     publishing {
         publications {
             create("release", MavenPublication::class) {
+                artifactId = "DLSideBar_Compose"
                 from(components.getByName("release"))
+            }
+        }
+        repositories {
+            maven {
+                url = uri("/Users/d10ng/project/kotlin/maven-repo/repository")
             }
         }
     }

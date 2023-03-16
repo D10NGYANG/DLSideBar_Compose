@@ -14,13 +14,25 @@
 allprojects {
     repositories {
         maven { url 'https://jitpack.io' }
+        // 我的github镜像仓库
+        maven { url 'https://raw.githubusercontent.com/D10NGYANG/maven-repo/main/repository'}
     }
 }
 ```
 2. Add the dependency
 ```groovy
 dependencies {
-        implementation 'com.github.D10NGYANG:DLSideBar_Compose:1.0.3'
+    implementation 'com.github.D10NGYANG:DLSideBar_Compose:1.1.0'
+
+    // Compose
+    def composeBom = platform('androidx.compose:compose-bom:2023.01.00')
+    implementation composeBom
+    androidTestImplementation composeBom
+    // Material Design 2
+    implementation 'androidx.compose.material:material'
+    // Android Studio Preview support
+    implementation 'androidx.compose.ui:ui-tooling-preview'
+    debugImplementation 'androidx.compose.ui:ui-tooling'
 }
 ```
 3. 在你的UI页面中使用
