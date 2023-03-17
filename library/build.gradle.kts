@@ -6,8 +6,8 @@ plugins {
     id("maven-publish")
 }
 
-group = "com.github.D10NG"
-version = "1.1.0"
+group = "com.github.D10NGYANG"
+version = "1.1.1"
 
 android {
     namespace = "com.d10ng.sidebar.lib"
