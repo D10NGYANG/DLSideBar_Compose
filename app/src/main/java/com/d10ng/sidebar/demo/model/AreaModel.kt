@@ -1,6 +1,6 @@
 package com.d10ng.sidebar.demo.model
 
-import com.d10ng.applib.resource.getAssetsJSONArray
+import com.d10ng.app.resource.getAssetsJSONArray
 import com.d10ng.sidebar.demo.app.MyApp
 import com.d10ng.sidebar.demo.bean.AreaBean
 import com.d10ng.text.string.toPinYin

@@ -32,22 +32,17 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
-    kotlinOptions {
-        jvmTarget = "11"
+    kotlin {
+        jvmToolchain(8)
     }
     composeOptions {
         kotlinCompilerExtensionVersion = compose_compiler_ver
     }
     buildFeatures {
         compose = true
-    }
-    packagingOptions {
-        resources {
-            excludes.add("/META-INF/{AL2.0,LGPL2.1}")
-        }
     }
 }
 
@@ -56,7 +51,7 @@ dependencies {
     implementation(project(":library"))
 
     // Android
-    implementation("androidx.core:core-ktx:1.9.0")
+    implementation("androidx.core:core-ktx:1.10.0")
 
     // 单元测试（可选）
     testImplementation("junit:junit:4.13.2")
@@ -97,9 +92,9 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:$kotlin_serialization_json")
 
     // APP通用工具
-    implementation("com.github.D10NGYANG:DLAppUtil:2.1")
+    implementation("com.github.D10NGYANG:DLAppUtil:2.3.0")
     // APP通用工具
-    implementation("com.github.D10NGYANG:DLTextUtil:1.4.0")
+    implementation("com.github.D10NGYANG:DLTextUtil:1.4.1")
 
     // 拼音处理
     implementation(files("libs/pinyin4j-2.5.0.jar"))

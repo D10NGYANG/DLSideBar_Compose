@@ -8,7 +8,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.core.view.WindowCompat
-import com.d10ng.applib.view.lockScreenOrientation
+import com.d10ng.app.view.lockScreenOrientation
 import com.d10ng.sidebar.demo.ui.page.NavGraphs
 import com.d10ng.sidebar.demo.ui.theme.DLSideBarTheme
 import com.google.accompanist.navigation.material.ExperimentalMaterialNavigationApi
