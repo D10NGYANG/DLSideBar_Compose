@@ -22,10 +22,10 @@ allprojects {
 2. Add the dependency
 ```groovy
 dependencies {
-    implementation 'com.github.D10NGYANG:DLSideBar_Compose:1.2.0'
+    implementation 'com.github.D10NGYANG:DLSideBar_Compose:1.2.1'
 
     // Compose
-    def composeBom = platform('androidx.compose:compose-bom:2023.01.00')
+    def composeBom = platform('androidx.compose:compose-bom:2023.05.01')
     implementation composeBom
     androidTestImplementation composeBom
     // Material Design 2
