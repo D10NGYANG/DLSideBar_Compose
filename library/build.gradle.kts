@@ -59,6 +59,9 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
 }
 
+val bds100MavenUsername: String by project
+val bds100MavenPassword: String by project
+
 afterEvaluate {
     publishing {
         publications {
@@ -70,6 +73,13 @@ afterEvaluate {
         repositories {
             maven {
                 url = uri("/Users/d10ng/project/kotlin/maven-repo/repository")
+            }
+            maven {
+                credentials {
+                    username = bds100MavenUsername
+                    password = bds100MavenPassword
+                }
+                setUrl("https://nexus.bds100.com/repository/maven-releases/")
             }
         }
     }
