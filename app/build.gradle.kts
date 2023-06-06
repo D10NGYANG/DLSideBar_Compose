@@ -51,7 +51,7 @@ dependencies {
     implementation(project(":library"))
 
     // Android
-    implementation("androidx.core:core-ktx:1.10.0")
+    implementation("androidx.core:core-ktx:1.10.1")
 
     // 单元测试（可选）
     testImplementation("junit:junit:4.13.2")
