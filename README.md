@@ -9,23 +9,21 @@
 <img src="https://github.com/D10NGYANG/DLSideBar_Compose/blob/master/image/image2.png" width="200"/><br/>
 
 # 使用说明
-1. Add the JitPack repository to your build file
+1 添加仓库
 ```groovy
 allprojects {
     repositories {
-        maven { url 'https://jitpack.io' }
-        // 我的github镜像仓库
         maven { url 'https://raw.githubusercontent.com/D10NGYANG/maven-repo/main/repository'}
     }
 }
 ```
-2. Add the dependency
+2 添加仓库
 ```groovy
 dependencies {
-    implementation 'com.github.D10NGYANG:DLSideBar_Compose:1.2.1'
+    implementation 'com.github.D10NGYANG:DLSideBar_Compose:1.2.3'
 
     // Compose
-    def composeBom = platform('androidx.compose:compose-bom:2023.05.01')
+    def composeBom = platform('androidx.compose:compose-bom:2023.06.01')
     implementation composeBom
     androidTestImplementation composeBom
     // Material Design 2
@@ -35,7 +33,7 @@ dependencies {
     debugImplementation 'androidx.compose.ui:ui-tooling'
 }
 ```
-3. 在你的UI页面中使用
+3 在你的UI页面中使用
 ```kotlin
 val scope = rememberCoroutineScope()
 SideBar(
@@ -58,7 +56,7 @@ SideBar(
     }
 }
 ```
-4. 更多参数说明
+4 更多参数说明
 
 ```kotlin
 @ExperimentalComposeUiApi
@@ -82,7 +80,7 @@ fun SideBar(
     content: @Composable BoxScope.() -> Unit
 )
 ```
-5. 混淆
+5 混淆
 ```properties
 -keep class com.d10ng.sidebar.** {*;}
 -dontwarn com.d10ng.sidebar.**

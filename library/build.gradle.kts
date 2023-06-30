@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "com.github.D10NGYANG"
-version = "1.2.1"
+version = "1.2.3"
 
 android {
     namespace = "com.d10ng.sidebar.lib"

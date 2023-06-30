@@ -70,8 +70,6 @@ dependencies {
     // UI Tests
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
-    // Integration with activities
-    //implementation("androidx.activity:activity-compose:1.6.1")
 
     // Lifecycle
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:$jetpack_lifecycle_ver")
@@ -92,9 +90,9 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:$kotlin_serialization_json")
 
     // APP通用工具
-    implementation("com.github.D10NGYANG:DLAppUtil:2.3.0")
+    implementation("com.github.D10NGYANG:DLAppUtil:2.3.2")
     // APP通用工具
-    implementation("com.github.D10NGYANG:DLTextUtil:1.4.1")
+    implementation("com.github.D10NGYANG:DLTextUtil:1.4.2")
 
     // 拼音处理
     implementation(files("libs/pinyin4j-2.5.0.jar"))
