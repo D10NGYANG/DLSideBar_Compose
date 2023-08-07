@@ -20,7 +20,7 @@ allprojects {
 2 添加仓库
 ```groovy
 dependencies {
-    implementation 'com.github.D10NGYANG:DLSideBar_Compose:1.2.3'
+    implementation 'com.github.D10NGYANG:DLSideBar_Compose:1.2.4'
 
     // Compose
     def composeBom = platform('androidx.compose:compose-bom:2023.06.01')

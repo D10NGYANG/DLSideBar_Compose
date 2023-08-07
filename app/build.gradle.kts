@@ -90,9 +90,9 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:$kotlin_serialization_json")
 
     // APP通用工具
-    implementation("com.github.D10NGYANG:DLAppUtil:2.3.2")
+    implementation("com.github.D10NGYANG:DLAppUtil:2.3.3")
     // APP通用工具
-    implementation("com.github.D10NGYANG:DLTextUtil:1.4.2")
+    implementation("com.github.D10NGYANG:DLTextUtil:1.4.3")
 
     // 拼音处理
     implementation(files("libs/pinyin4j-2.5.0.jar"))
