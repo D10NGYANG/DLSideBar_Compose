@@ -92,8 +92,5 @@ dependencies {
     // APP通用工具
     implementation("com.github.D10NGYANG:DLAppUtil:2.3.4")
     // APP通用工具
-    implementation("com.github.D10NGYANG:DLTextUtil:1.4.3")
-
-    // 拼音处理
-    implementation(files("libs/pinyin4j-2.5.0.jar"))
+    implementation("com.github.D10NGYANG:DLCommonUtil:0.0.2")
 }
