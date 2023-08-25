@@ -90,7 +90,7 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:$kotlin_serialization_json")
 
     // APP通用工具
-    implementation("com.github.D10NGYANG:DLAppUtil:2.3.3")
+    implementation("com.github.D10NGYANG:DLAppUtil:2.3.4")
     // APP通用工具
     implementation("com.github.D10NGYANG:DLTextUtil:1.4.3")
 
