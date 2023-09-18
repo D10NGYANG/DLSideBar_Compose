@@ -1,4 +1,10 @@
 # DLSideBar
+
+> ----------
+> ⚠️ 本项目已停止维护，相关组件已迁移至 [D10NGYANG/DLJetpackComposeUtil](https://github.com/D10NGYANG/DLJetpackComposeUtil)，以`IndexBar`组件的形式呈现。
+> 
+> ----------
+
 简单易用的SideBar 快速定位侧边栏A~Z 仿微信国家或地区代码选择 `jetpack compose`版本
 [![](https://jitpack.io/v/D10NGYANG/DLSideBar_Compose.svg)](https://jitpack.io/#D10NGYANG/DLSideBar_Compose)
 
